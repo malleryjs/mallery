@@ -170,9 +170,11 @@ Have a look at the example!
   ]
 };</code></pre>
 <h2 id="tips"><a href="#tips" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Tips</h2>
-<h3 id="folder-as-root-of-another-branch"><a href="#folder-as-root-of-another-branch" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Folder as root of another branch</h3>
+<h3 id="folder-as-root-of-another-git-branch"><a href="#folder-as-root-of-another-git-branch" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Folder as root of another git branch</h3>
 <p>Github Pages can host the ouput of Mallery!</p>
 <p>Use the following command after updating the site:</p>
 <pre><code class="hljs language-bash">git subtree push --prefix site origin gh-pages</code></pre>
 <p>This command will push the changes from the folder <code>site</code> to the
 branch <code>gh-pages</code>.</p>
+<h3 id="git-updates-were-rejected"><a href="#git-updates-were-rejected" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Git updates were rejected</h3>
+<pre><code class="hljs language-bash">git push origin `git subtree split --prefix site gh-pages`:gh-pages --force</code></pre>
