@@ -1,6 +1,6 @@
 {
   "name": "mallery",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Static documentation site generator",
   "main": "",
   "scripts": {
