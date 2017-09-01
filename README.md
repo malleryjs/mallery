@@ -26,7 +26,7 @@ Configuration and CLI options are subject to change.
 - Numbered headings
 
 ## The name
-The name was choosen randomly when I was reading through [Wikipedia](https://en.wikipedia.org/wiki/CL-HTTP)
+The name was choosen randomly when I was reading through [Wikipedia](https://en.wikipedia.org/wiki/CL-HTTP).
 
 ## Creator
 Creator of this tool is [Katja Lutz](https://twitter.com/Katy_Wings)
