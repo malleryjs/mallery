@@ -1,0 +1,276 @@
+body, html, .app, .main-wrapper, .fullscreen {
+  height: 100%;
+  max-height: 100%;
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child) {
+  margin-top: 45px;
+}
+
+h1 + h2,
+h2 + h3 {
+  margin-top: 20px !important;
+}
+
+h4:not(:first-child),
+h5:not(:first-child) {
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1.1rem;
+}
+
+.header__inner {
+  max-width: 800px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+.header__title {
+  color: #adadad;
+  font-weight: 200;
+  font-size: 1.3em;
+}
+
+.header__title:focus,
+.header__title:active,
+.header__title:hover {
+  color: #5c5c5c;
+  text-decoration: none;
+}
+
+.toc-link {
+  display: inline-block;
+  transform: scale(0.7);
+}
+
+.left_nav {
+  font-size: 0.9em;
+  height: 100%;
+  position: static;
+  padding-left: 0px;
+}
+
+
+.left_nav__search {
+  height: 40px;
+  border-width: 0px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  border-radius: 0px;
+  padding: 12px 20px;
+}
+
+
+.left_nav__content {
+  padding: 0px;
+}
+
+.left_nav__content_wrapper {
+  background-color: #F7F7F7;
+  border-radius: 0px;
+}
+
+.left_nav__menu--root {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 15px;
+}
+
+.left_nav__menu--root > .left_nav__menu_item {
+  background-color: transparent;
+  border-radius: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid rgba(0,0,0,0.01);
+}
+
+.left_nav__menu_item_link:link,
+.left_nav__menu_item_link {
+  color: #555;
+  text-decoration: none;
+}
+
+.left_nav__menu_item_link:active,
+.left_nav__menu_item_link:hover,
+.left_nav__menu_item--active > .left_nav__menu_item_link {
+  text-decoration: none;
+}
+
+.left_nav__menu--sub .left_nav__menu_item_link {
+  padding-top: 14px;
+}
+
+.left_nav__menu_item_link {
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.left_nav__menu--sub {
+  padding-left: 15px;
+  width: 100%;
+}
+
+.left_nav__menu--root > .left_nav__menu_item:first-child {
+  border-top-width: 0px;
+}
+
+.left_nav__menu--root > .left_nav__menu_item:last-child {
+  border-bottom-width: 0px;
+}
+
+@media  (min-width: 1199px) AND (max-width: 1400px) {
+  div.main-wrapper-wrapper a.navigation {
+    display: none
+  }
+}
+
+@media (max-width: 700px) {
+  .header__inner {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1199px) {
+  .left_nav {
+    position: fixed;
+    display: none;
+    padding-right: 0px;
+    z-index: 2;
+    overflow-y: auto;
+  }
+  .left_nav--active {
+    display: block;
+  }
+
+  .left_nav {
+    max-height: 100%;
+  }
+
+  .header {
+    padding-top: 17px;
+    height: 80px;
+  }
+}
+
+.fixed_menu_button {
+  opacity: 0.4;
+  z-index: 3;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+@media (min-width: 1200px) {
+  .left_nav__content_wrapper {
+    width: 100%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+
+  .left_nav,
+  .left_nav__content_wrapper,
+  .left_nav__content,
+  .left_nav__menu--root {
+    height: 100%;
+  }
+}
+
+.main_col {
+  height: 100%;
+}
+
+
+.main-wrapper-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.main-wrapper {
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 15px;
+}
+
+.main-wrapper-wrapper a.navigation {
+  position: absolute;
+  width: 130px;
+  text-align: center;
+  height: 100%;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  top: 0px;
+}
+
+.main-wrapper-wrapper a.navigation span {
+  color: gray;
+}
+
+.main-wrapper-wrapper a.navigation:hover span {
+  color: black;
+}
+
+.main-wrapper-wrapper a.navigation.navigation-next {
+  right: 0;
+}
+
+main {
+  min-height: 50%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main h1:first-child {
+  display: none;
+}
+
+.footer {
+  margin-top: 20px;
+  opacity: 0.6;
+  font-size: 0.9em;
+  font-weight: 200;
+}
+
+.footer__content {
+  max-width: 800px;
+  margin: auto;
+}
+
+@media (max-width: 767px) {
+  header + button {
+    margin-bottom: 20px;
+  }
+  main + button {
+    margin-top: 20px;
+  }
+}
