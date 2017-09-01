@@ -10946,9 +10946,10 @@ window.router = router$2;
 var routeMiddleware = alo.createMiddleware(function(store, action) {
   if (action.type === 'setTocItemId') {
     var state = router$2.getState();
+    var itemId = action.payload.id;
+
     // Push history only, if there already was a previous item id set
-    if (state.toc.itemId != null) {
-      var itemId = action.payload.id;
+    if (state.toc.itemId != null && state.toc.itemId !== itemId) {
       var item = getTocItemById(itemId);
 
       if (item.hasContent === true) {
