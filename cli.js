@@ -105,8 +105,8 @@ config.get().then((config) => {
               item.path = item.path.replace(item.ext, '.html');
             }
             item.path = util.replace(' ', '-', item.path);
-            item.htmlPath = path.join('.html', item.path);
-            item.absoluteHtmlOutputPath = path.join(config.paths.output, '.html', item.path);
+            item.htmlPath = path.join('raw', item.path);
+            item.absoluteHtmlOutputPath = path.join(config.paths.output, 'raw', item.path);
             item.absoluteOutputPath = path.join(config.paths.output, item.path)
             let baseUrl = '';
             let levelIdx = 0;

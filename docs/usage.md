@@ -78,7 +78,7 @@ module.exports = {
 
 ## Tips
 
-### Folder as root of another branch
+### Folder as root of another git branch
 Github Pages can host the ouput of Mallery!
 
 Use the following command after updating the site:
@@ -89,3 +89,9 @@ git subtree push --prefix site origin gh-pages
 
 This command will push the changes from the folder `site` to the
 branch `gh-pages`.
+
+### Git updates were rejected
+
+```bash
+git push origin `git subtree split --prefix site gh-pages`:gh-pages --force
+```
