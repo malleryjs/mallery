@@ -1,3 +1,4 @@
+import 'assets/css/app.css';
 import './vendor/vendor.js';
 import { el, setChildren, text, mount } from "redom";
 import 'whatwg-fetch'

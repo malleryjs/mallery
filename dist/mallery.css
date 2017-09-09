@@ -196,8 +196,12 @@ h6 {
 .left_nav__menu--root {
   display: block;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   padding-bottom: 15px;
+}
+.overflowscrolling .left_nav__menu--root {
+  -webkit-overflow-scrolling: touch;
 }
 
 .left_nav__menu--root > .left_nav__menu_item {
@@ -264,6 +268,9 @@ h6 {
     z-index: 2;
     overflow-y: auto;
   }
+  .overflowscrolling .left_nav {
+    -webkit-overflow-scrolling: touch;
+  }
   .left_nav--active {
     display: block;
   }
@@ -316,6 +323,9 @@ h6 {
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 15px;
+}
+.overflowscrolling .main-wrapper {
+  -webkit-overflow-scrolling: touch;
 }
 
 .main-wrapper-wrapper a.navigation {

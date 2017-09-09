@@ -2,7 +2,7 @@
 This is a free and opensource static website generator for
 project documentations. Mallery automatically creates a static documentation
 website from the contents of your choosen folder. The output will look
-similar to this website.
+similar to [this website](http://www.malleryjs.com).
 
 At the moment this is a very early version and bugs might happen frequently.
 Configuration and CLI options are subject to change.
@@ -18,6 +18,8 @@ Configuration and CLI options are subject to change.
 ## Ideas / Future plans
 - Just work on the website and test Mallery
 - Improving error handling
+- Loadbar
+- Non-webserver handling (open the html files locally without server)
 - Enable minification of the js and css files (they are just called `min` :P)
 - Serve mode: Add a CLI option which watches the source folder
 - Add a hide navigation button for large desktops
