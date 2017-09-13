@@ -1,6 +1,6 @@
 /**
  * @license
- * mallery 0.0.1 /blob/master/LICENSE
+ * mallery 0.0.2 /blob/master/LICENSE
  */
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -11628,14 +11628,18 @@ var App$1 = function App(appEl, config) {
   });
   renderSub.addStore([router$2, appStore]);
 
-  var chapterSub = router$2.createSubscription(function(stores, comp) {
-    if (comp.chapter != null) {
-      self.gotoChapter(comp.chapter);
+  // Changes to current focus based on specific router changes
+  var focusSubscription = router$2.createSubscription(function(stores, computed) {
+    if (computed.chapter != null) {
+      self.gotoChapter(computed.chapter);
     } else {
       self.focusElementByHash('#header');
     }
   });
-  chapterSub.createDependency({
+  focusSubscription.createDependency({
+    'item': function(stores) {
+      return stores.router.computed.tocItem;
+    },
     'chapter': function(stores) {
       return stores.router.computed.tocChapter;
     }

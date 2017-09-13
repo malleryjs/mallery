@@ -1,5 +1,5 @@
-import 'assets/css/app.css';
 import './vendor/vendor.js';
+import 'assets/css/app.css';
 import { el, setChildren, text, mount } from "redom";
 import 'whatwg-fetch'
 
@@ -117,14 +117,18 @@ export default class App {
     });
     renderSub.addStore([routerStore, appStore]);
 
-    const chapterSub = routerStore.createSubscription(function(stores, comp) {
-      if (comp.chapter != null) {
-        self.gotoChapter(comp.chapter);
+    // Changes to current focus based on specific router changes
+    const focusSubscription = routerStore.createSubscription(function(stores, computed) {
+      if (computed.chapter != null) {
+        self.gotoChapter(computed.chapter);
       } else {
         self.focusElementByHash('#header');
       }
     });
-    chapterSub.createDependency({
+    focusSubscription.createDependency({
+      'item': function(stores) {
+        return stores.router.computed.tocItem;
+      },
       'chapter': function(stores) {
         return stores.router.computed.tocChapter;
       }
