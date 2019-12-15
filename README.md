@@ -2,7 +2,7 @@
 # [mallery](https://github.com/malleryjs/mallery)
 
 
-<a href="https://opensource.org/licenses/MIT"><img src="https://raw.github.com/malleryjs/mallery//static/readme/gen-badges/badge.0.svg?sanitize=true" alt="license"></a> <a href="https://www.npmjs.com/package/mallery"><img src="https://raw.github.com/malleryjs/mallery//static/readme/gen-badges/badge.1.svg?sanitize=true" alt="npm"></a> <a href="https://prettier.io/"><img src="https://raw.github.com/malleryjs/mallery//static/readme/gen-badges/badge.2.svg?sanitize=true" alt="code style"></a> <img src="https://raw.github.com/malleryjs/mallery//static/readme/gen-badges/badge.3.svg?sanitize=true" alt="PRs"> 
+<a href="https://opensource.org/licenses/MIT"><img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.0.svg?sanitize=true" alt="license"></a> <a href="https://www.npmjs.com/package/mallery"><img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.1.svg?sanitize=true" alt="npm"></a> <a href="https://prettier.io/"><img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.2.svg?sanitize=true" alt="code style"></a> <img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.3.svg?sanitize=true" alt="PRs"> 
 
 Static documentation site generator
 
