@@ -9,4 +9,4 @@ npm install -g mallery
 ## Requirements
 
 - Node & NPM
-  - Its tested with Node 8.1.3
+  - Its tested with Node v10.16.0

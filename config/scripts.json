@@ -1,0 +1,20 @@
+{
+  "build": {
+    "nameSpaces": [
+      "cli",
+      "front"
+    ]
+  },
+  "coverage": {
+    "nameSpaces": [
+      "cli",
+      "front"
+    ]
+  },
+  "test": {
+    "nameSpaces": [
+      "cli",
+      "front"
+    ]
+  }
+}

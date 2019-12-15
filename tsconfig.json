@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "jsxFactory": "h",
+        "noEmit": true,
+        "lib": [
+            "dom",
+            "es6",
+            "es2017",
+            "scripthost"
+        ],
+        "target": "es5",
+        "allowJs": true,
+        "isolatedModules": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "baseUrl": "./lib",
+        "strict": false,
+        "strictNullChecks": true,
+        "paths": {
+            "@lib/*": [
+                "*"
+            ],
+            "@project/*": [
+                "../*"
+            ]
+        }
+    },
+    "include": [
+        "**/*"
+    ],
+    "exclude": [
+        "./tmp",
+        "./typings"
+    ]
+}

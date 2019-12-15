@@ -1,0 +1,849 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>1.0.0-alpha.0</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./main.css?v=1.0.0-alpha.0">
+    <script src="./main.js?v=1.0.0-alpha.0"></script>
+    <link class="favicon" rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <!--<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">-->
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <h1 id="usage"><a href="#usage" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Usage</h1>
+<h2 id="cli"><a href="#cli" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>CLI</h2>
+<p>Most of the config file <a href="options" target="_blank">options</a> can also be used directly from
+the CLI. If paths are provided via CLI argument, they will be relative to the
+current working directory!</p>
+<pre><code class="hljs language-bash">mallery --title <span class="hljs-string">"Iron Man Suit"</span> --colors-accent orange --brandIcon <span class="hljs-literal">false</span>
+  --footer-html <span class="hljs-string">"&#x26;copy; &#x26;copy; &#x26;copy; Copypasta"</span> --paths-output=<span class="hljs-string">"custom/output"</span></code></pre>
+<blockquote class="blockquote">
+<p class="mb-0">Notice how recursive options like colors-accent or footer-html can be used!</p>
+</blockquote>
+<h3 id="additional-options"><a href="#additional-options" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Additional options</h3>
+<h4 id="first-argument"><a href="#first-argument" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>First argument</h4>
+<p>The first CLI argument can be a path to the <a href="#configuration-file">config file</a>:</p>
+<pre><code class="hljs language-bash">mallery custom/path/to/config.js</code></pre>
+<h2 id="configuration-file"><a href="#configuration-file" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Configuration file</h2>
+<p>Mallery will search for a <code>mallery.config.js</code> file in the current working folder.
+A custom path to this file can be provided via <a href="#first-argument">CLI</a>!</p>
+<h3 id="options"><a href="#options" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Options</h3>
+<table class="table table-hover table-bordered">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><pre>brandIcon</pre></td>
+<td>Copy the Mallory favicon to the root of the website</td>
+<td>true</td>
+</tr>
+<tr>
+<td><pre>title</pre></td>
+<td>A base title (postfixed to all page titles)</td>
+<td></td>
+</tr>
+<tr>
+<td><pre>colors</pre></td>
+<td>Multible color settings</td>
+<td>{...}</td>
+</tr>
+<tr>
+<td><pre>  accent</pre></td>
+<td>Color of links in content, active menu items and mobile hamburger button</td>
+<td><span style="color: #00BF63;">#00BF63</span></td>
+</tr>
+<tr>
+<td><pre>paths</pre></td>
+<td>Several path options (paths relative to config file<br><small>Paths in config file are relative to the file</small><br><small>Path arguments via CLI are relative to current working dir</small></td>
+<td>{...}</td>
+</tr>
+<tr>
+<td><pre>  src</pre></td>
+<td>Path to the folder with source files (markdown etc)</td>
+<td>docs</td>
+</tr>
+<tr>
+<td><pre>  output</pre></td>
+<td>Destination path of the compiled website</td>
+<td>site</td>
+</tr>
+<tr>
+<td><pre>  public</pre></td>
+<td>Folder which should be used (copied) as the root of the website</td>
+<td>docs/public</td>
+</tr>
+<tr>
+<td><pre>includes</pre></td>
+<td>Object - file content type controls</td>
+<td>{...}</td>
+</tr>
+<tr>
+<td><pre>  plaintext</pre></td>
+<td>Files with these associations will be interpreted as plaintext</td>
+<td>[ .txt ]</td>
+</tr>
+<tr>
+<td><pre>  html</pre></td>
+<td>Files with these associations will be interpreted as markdown</td>
+<td>[ .html ]</td>
+</tr>
+<tr>
+<td><pre>  markdown</pre></td>
+<td>Files with these associations will be interpreted as plaintext</td>
+<td>[ .md ]</td>
+</tr>
+<tr>
+<td><pre>toc</pre></td>
+<td>Table of contents (automatically generated if not provided)<br><small>Have a look at the example!</small></td>
+<td>[...]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example"><a href="#example" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Example</h3>
+<pre><code class="hljs language-js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">brandIcon</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">title</span>: <span class="hljs-string">'Iron Man Suit'</span>,
+  <span class="hljs-attr">paths</span>: {
+    <span class="hljs-attr">output</span>: <span class="hljs-string">'customFolder'</span>
+  },
+  <span class="hljs-attr">colors</span>: {
+    <span class="hljs-attr">accent</span>: <span class="hljs-string">'red'</span>
+  },
+  <span class="hljs-attr">footer</span>: {
+    <span class="hljs-attr">html</span>: <span class="hljs-string">'"Copyright &#x26;copy; 2017"'</span>
+  },
+  <span class="hljs-attr">toc</span>: [
+    <span class="hljs-comment">// All files of this folder are automatically included</span>
+    { <span class="hljs-attr">path</span>: <span class="hljs-string">'a_folder'</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'A folder with custom title'</span> },
+    <span class="hljs-comment">// Title will be "A file"</span>
+    { <span class="hljs-attr">path</span>: <span class="hljs-string">'a_file.md'</span> }
+    { <span class="hljs-attr">path</span>: <span class="hljs-string">'a_second_folder'</span>, <span class="hljs-attr">children</span>: [
+      <span class="hljs-comment">// Path of parent is automatically prepended!</span>
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">'file_in_second_folder.md'</span> },
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">'file2_in_second_folder.md'</span> },
+      <span class="hljs-comment">// A child item with more own child items (... is just a placeholder)</span>
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">'folder_in_second_folder'</span>, <span class="hljs-attr">children</span>: [ <span class="hljs-string">'...'</span> ] },
+    ]},
+    <span class="hljs-comment">// Link item</span>
+    { <span class="hljs-attr">href</span>: <span class="hljs-string">'http://wikipedia.org'</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Just a link'</span> }
+  ]
+};</code></pre>
+<h2 id="tips"><a href="#tips" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Tips</h2>
+<h3 id="folder-as-root-of-another-git-branch"><a href="#folder-as-root-of-another-git-branch" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Folder as root of another git branch</h3>
+<p>Github Pages can host the ouput of Mallery!</p>
+<p>Use the following command after updating the site:</p>
+<pre><code class="hljs language-bash">git subtree push --prefix site origin gh-pages</code></pre>
+<p>This command will push the changes from the folder <code>site</code> to the
+branch <code>gh-pages</code>.</p>
+<h3 id="git-updates-were-rejected"><a href="#git-updates-were-rejected" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Git updates were rejected</h3>
+<pre><code class="hljs language-bash">git push origin `git subtree split --prefix site gh-pages`:gh-pages --force</code></pre>
+
+      </main>
+    </div>
+
+    <script>
+      var $ = document.querySelectorAll.bind(document)
+      new mallery.App($('#app')[0], {
+ "config": {
+  "colors": {
+   "accent": "#00BF63"
+  },
+  "title": "mallery",
+  "footer": {
+   "html": ""
+  }
+ },
+ "toc": {
+  "items": [
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "index.html",
+    "name": "README.md",
+    "title": "Mallery",
+    "level": 0,
+    "id": 0,
+    "htmlPath": "raw/index.html",
+    "baseUrl": "./",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "mallery",
+       "hash": "mallery",
+       "children": [
+        1,
+        2,
+        3,
+        4
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "Features",
+       "hash": "features",
+       "children": [],
+       "id": 1
+      },
+      {
+       "level": "2",
+       "heading": "Ideas / Future plans",
+       "hash": "ideas--future-plans",
+       "children": [],
+       "id": 2
+      },
+      {
+       "level": "2",
+       "heading": "The name",
+       "hash": "the-name",
+       "children": [],
+       "id": 3
+      },
+      {
+       "level": "2",
+       "heading": "Creator",
+       "hash": "creator",
+       "children": [],
+       "id": 4
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "installation.html",
+    "name": "installation.md",
+    "title": "Installation",
+    "level": 0,
+    "id": 1,
+    "htmlPath": "raw/installation.html",
+    "baseUrl": "./",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Installation",
+       "hash": "installation",
+       "children": [
+        1
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "Requirements",
+       "hash": "requirements",
+       "children": [],
+       "id": 1
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "usage.html",
+    "name": "usage.md",
+    "title": "Usage",
+    "level": 0,
+    "id": 2,
+    "htmlPath": "raw/usage.html",
+    "baseUrl": "./",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Usage",
+       "hash": "usage",
+       "children": [
+        1,
+        4,
+        7
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "CLI",
+       "hash": "cli",
+       "children": [
+        2
+       ],
+       "id": 1
+      },
+      {
+       "level": "3",
+       "heading": "Additional options",
+       "hash": "additional-options",
+       "children": [
+        3
+       ],
+       "id": 2
+      },
+      {
+       "level": "4",
+       "heading": "First argument",
+       "hash": "first-argument",
+       "children": [],
+       "id": 3
+      },
+      {
+       "level": "2",
+       "heading": "Configuration file",
+       "hash": "configuration-file",
+       "children": [
+        5,
+        6
+       ],
+       "id": 4
+      },
+      {
+       "level": "3",
+       "heading": "Options",
+       "hash": "options",
+       "children": [],
+       "id": 5
+      },
+      {
+       "level": "3",
+       "heading": "Example",
+       "hash": "example",
+       "children": [],
+       "id": 6
+      },
+      {
+       "level": "2",
+       "heading": "Tips",
+       "hash": "tips",
+       "children": [
+        8,
+        9
+       ],
+       "id": 7
+      },
+      {
+       "level": "3",
+       "heading": "Folder as root of another git branch",
+       "hash": "folder-as-root-of-another-git-branch",
+       "children": [],
+       "id": 8
+      },
+      {
+       "level": "3",
+       "heading": "Git updates were rejected",
+       "hash": "git-updates-were-rejected",
+       "children": [],
+       "id": 9
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "CHANGELOG.html",
+    "name": "CHANGELOG.md",
+    "title": "Changelog",
+    "level": 0,
+    "id": 3,
+    "htmlPath": "raw/CHANGELOG.html",
+    "baseUrl": "./",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Changelog",
+       "hash": "changelog",
+       "children": [
+        1,
+        2,
+        3,
+        4
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "v1.0.0-alpha.0",
+       "hash": "v100-alpha0",
+       "children": [],
+       "id": 1
+      },
+      {
+       "level": "2",
+       "heading": "v0.0.3",
+       "hash": "v003",
+       "children": [],
+       "id": 2
+      },
+      {
+       "level": "2",
+       "heading": "v0.0.2",
+       "hash": "v002",
+       "children": [],
+       "id": 3
+      },
+      {
+       "level": "2",
+       "heading": "v0.0.1",
+       "hash": "v001",
+       "children": [],
+       "id": 4
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "href": "https://github.com/malleryjs/mallery/",
+    "title": "Github",
+    "level": 0,
+    "id": 4,
+    "hasContent": false
+   },
+   {
+    "ext": "",
+    "isDir": true,
+    "absolutePath": null,
+    "path": "examples",
+    "name": "examples",
+    "children": [
+     6,
+     7,
+     8,
+     9,
+     13,
+     15,
+     16
+    ],
+    "title": "Demo",
+    "level": 0,
+    "id": 5,
+    "htmlPath": "raw/examples",
+    "baseUrl": "./"
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "examples/test.html",
+    "name": "test.md",
+    "level": 1,
+    "id": 6,
+    "htmlPath": "raw/examples/test.html",
+    "baseUrl": "../",
+    "title": "Test",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Hello world",
+       "hash": "hello-world",
+       "children": [
+        1,
+        2,
+        5,
+        6,
+        11
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "Lets get started",
+       "hash": "lets-get-started",
+       "children": [],
+       "id": 1
+      },
+      {
+       "level": "2",
+       "heading": "Sweet smiles",
+       "hash": "sweet-smiles",
+       "children": [
+        3,
+        4
+       ],
+       "id": 2
+      },
+      {
+       "level": "3",
+       "heading": "Now follows a link",
+       "hash": "now-follows-a-link",
+       "children": [],
+       "id": 3
+      },
+      {
+       "level": "3",
+       "heading": "A lot of text",
+       "hash": "a-lot-of-text",
+       "children": [],
+       "id": 4
+      },
+      {
+       "level": "2",
+       "heading": "Should scroll down",
+       "hash": "should-scroll-down",
+       "children": [],
+       "id": 5
+      },
+      {
+       "level": "2",
+       "heading": "same level",
+       "hash": "same-level",
+       "children": [
+        7,
+        8,
+        10
+       ],
+       "id": 6
+      },
+      {
+       "level": "4",
+       "heading": "very high heading",
+       "hash": "very-high-heading",
+       "children": [],
+       "id": 7
+      },
+      {
+       "level": "4",
+       "heading": "same",
+       "hash": "same",
+       "children": [
+        9
+       ],
+       "id": 8
+      },
+      {
+       "level": "5",
+       "heading": "deeply nested",
+       "hash": "deeply-nested",
+       "children": [],
+       "id": 9
+      },
+      {
+       "level": "4",
+       "heading": "same again",
+       "hash": "same-again",
+       "children": [],
+       "id": 10
+      },
+      {
+       "level": "2",
+       "heading": "here i come",
+       "hash": "here-i-come",
+       "children": [],
+       "id": 11
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "examples/readme2.html",
+    "name": "readme2.md",
+    "title": "README",
+    "level": 1,
+    "id": 7,
+    "htmlPath": "raw/examples/readme2.html",
+    "baseUrl": "../",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "README",
+       "hash": "readme",
+       "children": [
+        1,
+        2,
+        3
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "A table",
+       "hash": "a-table",
+       "children": [],
+       "id": 1
+      },
+      {
+       "level": "2",
+       "heading": "A linebreak",
+       "hash": "a-linebreak",
+       "children": [],
+       "id": 2
+      },
+      {
+       "level": "2",
+       "heading": "External link in new tab",
+       "hash": "external-link-in-new-tab",
+       "children": [],
+       "id": 3
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "examples/index8.html",
+    "name": "index.md",
+    "title": "Hello world",
+    "level": 1,
+    "id": 8,
+    "htmlPath": "raw/examples/index8.html",
+    "baseUrl": "../",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Welcome to the cool place",
+       "hash": "welcome-to-the-cool-place",
+       "children": [],
+       "id": 0
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": "",
+    "isDir": true,
+    "absolutePath": null,
+    "path": "examples/subfolder2",
+    "name": "subfolder2",
+    "children": [
+     10,
+     11
+    ],
+    "level": 1,
+    "id": 9,
+    "htmlPath": "raw/examples/subfolder2",
+    "baseUrl": "../",
+    "title": "Subfolder2"
+   },
+   {
+    "ext": ".html",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "examples/subfolder2/autoincluded.html",
+    "name": "autoincluded.html",
+    "level": 2,
+    "id": 10,
+    "htmlPath": "raw/examples/subfolder2/autoincluded.html",
+    "baseUrl": "../../",
+    "title": "Autoincluded",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Its me and i am autoincluded",
+       "hash": "start",
+       "children": [
+        1,
+        2
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "A crazy world",
+       "hash": "test",
+       "children": [],
+       "id": 1
+      },
+      {
+       "level": "2",
+       "heading": "\n  It is!\n",
+       "hash": "itis",
+       "children": [
+        3
+       ],
+       "id": 2
+      },
+      {
+       "level": "3",
+       "heading": "Really!",
+       "hash": "really",
+       "children": [],
+       "id": 3
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": "",
+    "isDir": true,
+    "absolutePath": null,
+    "path": "examples/subfolder2/subsub",
+    "name": "subsub",
+    "children": [
+     12
+    ],
+    "level": 2,
+    "id": 11,
+    "htmlPath": "raw/examples/subfolder2/subsub",
+    "baseUrl": "../../",
+    "title": "Subsub"
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "examples/subfolder2/subsub/furtherincluded.html",
+    "name": "furtherincluded.md",
+    "level": 3,
+    "id": 12,
+    "htmlPath": "raw/examples/subfolder2/subsub/furtherincluded.html",
+    "baseUrl": "../../../",
+    "title": "Furtherincluded",
+    "chapters": {
+     "root": [
+      0
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Included too :)",
+       "children": [],
+       "id": 0
+      }
+     ]
+    },
+    "hasContent": true
+   },
+   {
+    "ext": "",
+    "isDir": true,
+    "absolutePath": null,
+    "path": "examples/subfolder",
+    "name": "subfolder",
+    "children": [
+     14
+    ],
+    "title": "Subfolder",
+    "level": 1,
+    "id": 13,
+    "htmlPath": "raw/examples/subfolder",
+    "baseUrl": "../"
+   },
+   {
+    "ext": ".md",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "examples/subfolder/more-infos.html",
+    "name": "more-infos.md",
+    "level": 2,
+    "id": 14,
+    "htmlPath": "raw/examples/subfolder/more-infos.html",
+    "baseUrl": "../../",
+    "title": "More Infos",
+    "chapters": {
+     "root": [],
+     "items": []
+    },
+    "hasContent": true
+   },
+   {
+    "href": "https://google.ch",
+    "title": "Google",
+    "level": 1,
+    "id": 15,
+    "hasContent": false
+   },
+   {
+    "ext": "",
+    "isDir": true,
+    "absolutePath": null,
+    "path": "examples/more-tests",
+    "name": "more tests",
+    "children": [
+     17
+    ],
+    "level": 1,
+    "id": 16,
+    "htmlPath": "raw/examples/more-tests",
+    "baseUrl": "../",
+    "title": "More Tests"
+   },
+   {
+    "ext": ".txt",
+    "isDir": false,
+    "absolutePath": null,
+    "path": "examples/more-tests/plain---text-file.html",
+    "name": "plain - text file.txt",
+    "level": 2,
+    "id": 17,
+    "htmlPath": "raw/examples/more-tests/plain---text-file.html",
+    "baseUrl": "../../",
+    "title": "Plain - Text File",
+    "chapters": {
+     "root": [],
+     "items": []
+    },
+    "hasContent": true
+   }
+  ],
+  "root": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "activeItemId": 2
+ }
+});
+    </script>
+  </body>
+</html>
