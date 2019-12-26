@@ -110,7 +110,8 @@ module.exports = function({
   isNode = false,
   outputDir,
   isLibrary = false,
-  nameSpaceId
+  nameSpaceId,
+  nameSpace
 }) {
   const envIsTesting = util.envIsTesting(env);
   const envIsProd = process.env.NODE_ENV === "production";
@@ -256,7 +257,7 @@ module.exports = function({
     config.optimization.sideEffects = false;
   }
 
-  if (envIsTesting || isNode) {
+  if (nameSpace.excludeExternals) {
     const nodeExternals = require("webpack-node-externals");
     config.externals.push(
       nodeExternals({

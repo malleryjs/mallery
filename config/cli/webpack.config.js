@@ -6,11 +6,15 @@ const FilterWarningsPlugin = require("webpack-filter-warnings-plugin");
 const pkg = require(paths.project("package.json"));
 
 module.exports = function(env, argv) {
-  const nameSpace = require("./config")();
-
   const envIsWatching = webpackUtil.envIsWatching();
   const envIsTesting = webpackUtil.envIsTesting();
   const envIsProd = process.env.NODE_ENV === "production";
+
+  const nameSpace = require("./config")({
+    envIsWatching,
+    envIsTesting,
+    envIsProd
+  });
 
   const nameSpaceId = nameSpace.id;
   const isLibrary = nameSpace.isLibrary;
@@ -35,6 +39,7 @@ module.exports = function(env, argv) {
   let commonConfig = require("../webpack.common.config")({
     env,
     argv,
+    nameSpace,
     isNode: nameSpace.isNode,
     outputDir,
     nameSpaceId,
