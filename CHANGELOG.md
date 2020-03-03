@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.0.0-alpha.4
+- BUGFIX: Escape element ids with leading numbers when querying in the dom
+
 ## v1.0.0-alpha.0
 - Rewrote most of the code to Typescript
 - Migrated from Redom to Preact
