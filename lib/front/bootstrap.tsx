@@ -16,7 +16,16 @@ import { App as AppComponent } from "./components/app";
 import { addNewHistoryEntry } from "./util/history";
 import { computed } from "./store/computed";
 
-const $ = document.querySelectorAll.bind(document);
+const idWithLeadingDigitRegex = new RegExp("^#\\d");
+const $ = function(query: string) {
+  if (query.match(idWithLeadingDigitRegex)) {
+    // Escape id queries with leading digit
+    // https://stackoverflow.com/a/20306237
+    query = `#\\3${query[1]} ${query.slice(2)}`;
+  }
+
+  return document.querySelectorAll(query);
+};
 
 export class App {
   mainWrapperRef = createRef();
