@@ -1,7 +1,7 @@
 {
   "name": "mallery",
   "amdName": "mallery",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "Static documentation site generator",
   "source": "lib/main.js",
   "main": "dist/main.js",
