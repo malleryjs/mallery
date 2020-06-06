@@ -1,9 +1,4 @@
-node_modules
-tmp/*
-!tmp/.gitkeep
-coverage
-!coverage/.gitkeep
-.vscode
-dist/*
-!dist/.gitkeep
-.npmrc
+/coverage
+/node_modules
+/.vscode
+dist

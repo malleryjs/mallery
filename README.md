@@ -1,12 +1,13 @@
+# [🧢 Mallery](https://github.com/malleryjs/mallery)
 
-# [mallery](https://github.com/malleryjs/mallery)
+[![](assets/badge.license.svg)](https://opensource.org/licenses/MIT)
+[![](assets/badge.npm.svg)](https://www.npmjs.com/package/mallery)
+![](assets/badge.coverage.svg)
+[![](assets/badge.style.svg)](https://prettier.io/)
 
-
-<a href="https://opensource.org/licenses/MIT"><img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.0.svg?sanitize=true" alt="license"></a> <a href="https://www.npmjs.com/package/mallery"><img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.1.svg?sanitize=true" alt="npm"></a> <a href="https://prettier.io/"><img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.2.svg?sanitize=true" alt="code style"></a> <img src="https://raw.github.com/malleryjs/mallery/development/static/readme/gen-badges/badge.3.svg?sanitize=true" alt="PRs"> 
+---
 
 Static documentation site generator
-
--------
 
 This is a free and opensource static website generator for
 project documentations. Mallery automatically creates a static documentation
@@ -14,6 +15,7 @@ website from the contents of your choosen folder. The output will look
 similar to [this website](http://www.malleryjs.com).
 
 ## Features
+
 - A slim and general purpose theme
 - Flexible and responsive navigation
 - History control (last visited pages)
@@ -22,6 +24,7 @@ similar to [this website](http://www.malleryjs.com).
 - The exported HTML of markdown files is extended with bootstrap annotation
 
 ## Ideas / Future plans
+
 - Just work on the website and test Mallery
 - Improving error handling
 - Loadbar
@@ -34,7 +37,9 @@ similar to [this website](http://www.malleryjs.com).
 - Numbered headings
 
 ## The name
+
 The name was choosen randomly when I was reading through [Wikipedia](https://en.wikipedia.org/wiki/CL-HTTP).
 
 ## Creator
+
 Creator of this tool is [Katja Lutz](https://twitter.com/Katy_Wings)
