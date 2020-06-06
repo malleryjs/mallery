@@ -2,7 +2,6 @@
 
 [![](assets/badge.license.svg)](https://opensource.org/licenses/MIT)
 [![](assets/badge.npm.svg)](https://www.npmjs.com/package/mallery)
-![](assets/badge.coverage.svg)
 [![](assets/badge.style.svg)](https://prettier.io/)
 
 ---
