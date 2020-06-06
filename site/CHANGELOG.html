@@ -8,21 +8,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="./main.css?v=1.0.0-alpha.4">
-    <script src="./main.umd.js?v=1.0.0-alpha.4"></script>
+    <script src="./main.js?v=1.0.0-alpha.4"></script>
     <link class="favicon" rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <!--<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">-->
   </head>
   <body>
     <div id="app">
       <main>
-        
+        <h1 id="changelog"><a href="#changelog" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Changelog</h1>
+<p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version" target="_blank">standard-version</a> for commit guidelines.</p>
+<h2 id="100-alpha5-2020-06-06"><a href="#100-alpha5-2020-06-06" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a><a href="https://github.com/malleryjs/mallery/compare/v1.0.0-alpha.4...v1.0.0-alpha.5" target="_blank">1.0.0-alpha.5</a> (2020-06-06)</h2>
+<h3 id="bug-fixes"><a href="#bug-fixes" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Bug Fixes</h3>
+<ul>
+<li>reduce transparency of navigation item bottom border (<a href="https://github.com/malleryjs/mallery/commit/10b8e2cdc3a4a01b540dfaa2d2a089acf79fcc6f" target="_blank">10b8e2c</a>)</li>
+</ul>
+<h1 id="changelog-1"><a href="#changelog-1" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>Changelog</h1>
+<p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version" target="_blank">standard-version</a> for commit guidelines.</p>
+<h2 id="v100-alpha4"><a href="#v100-alpha4" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>v1.0.0-alpha.4</h2>
+<ul>
+<li>BUGFIX: Escape element ids with leading numbers when querying in the dom</li>
+</ul>
+<h2 id="v100-alpha0"><a href="#v100-alpha0" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>v1.0.0-alpha.0</h2>
+<ul>
+<li>Rewrote most of the code to Typescript</li>
+<li>Migrated from Redom to Preact</li>
+<li>Upgraded alo to 4.0</li>
+<li>Upgraded bootstrap to 4.4</li>
+<li>Switched from handlebars to ejs</li>
+<li>Migrated to <a href="https://github.com/witneyjs/witney" target="_blank">witney</a> project template</li>
+</ul>
+<h2 id="v003"><a href="#v003" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>v0.0.3</h2>
+<ul>
+<li><a href="https://github.com/malleryjs/mallery/issues/5" target="_blank">#5</a>: Fixed: Scroll top wasn't called, when the toc item changed while no chapter was selected </li>
+</ul>
+<h2 id="v002"><a href="#v002" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>v0.0.2</h2>
+<ul>
+<li><a href="https://github.com/malleryjs/mallery/issues/1" target="_blank">#1</a>: Improved scrolling with mobile safari</li>
+<li>Added <a href="https://modernizr.com/" target="_blank">modernizr</a></li>
+</ul>
+<h2 id="v001"><a href="#v001" aria-hidden="true"><span class="toc-link"><span class="icono-chain"></span></span></a>v0.0.1</h2>
+<ul>
+<li>Initial release. Everything is new and shiny!</li>
+</ul>
 
       </main>
     </div>
 
     <script>
       var $ = document.querySelectorAll.bind(document)
-      new malleryFront.App($('#app')[0], {
+      new mallery.App($('#app')[0], {
  "config": {
   "colors": {
    "accent": "#00BF63"
@@ -242,8 +276,85 @@
     "htmlPath": "raw/CHANGELOG.html",
     "baseUrl": "./",
     "chapters": {
-     "root": [],
-     "items": []
+     "root": [
+      0,
+      3
+     ],
+     "items": [
+      {
+       "level": "1",
+       "heading": "Changelog",
+       "hash": "changelog",
+       "children": [
+        1
+       ],
+       "id": 0
+      },
+      {
+       "level": "2",
+       "heading": "1.0.0-alpha.5 (2020-06-06)",
+       "hash": "100-alpha5-2020-06-06",
+       "children": [
+        2
+       ],
+       "id": 1
+      },
+      {
+       "level": "3",
+       "heading": "Bug Fixes",
+       "hash": "bug-fixes",
+       "children": [],
+       "id": 2
+      },
+      {
+       "level": "1",
+       "heading": "Changelog",
+       "hash": "changelog-1",
+       "children": [
+        4,
+        5,
+        6,
+        7,
+        8
+       ],
+       "id": 3
+      },
+      {
+       "level": "2",
+       "heading": "v1.0.0-alpha.4",
+       "hash": "v100-alpha4",
+       "children": [],
+       "id": 4
+      },
+      {
+       "level": "2",
+       "heading": "v1.0.0-alpha.0",
+       "hash": "v100-alpha0",
+       "children": [],
+       "id": 5
+      },
+      {
+       "level": "2",
+       "heading": "v0.0.3",
+       "hash": "v003",
+       "children": [],
+       "id": 6
+      },
+      {
+       "level": "2",
+       "heading": "v0.0.2",
+       "hash": "v002",
+       "children": [],
+       "id": 7
+      },
+      {
+       "level": "2",
+       "heading": "v0.0.1",
+       "hash": "v001",
+       "children": [],
+       "id": 8
+      }
+     ]
     },
     "hasContent": true
    },

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-alpha.5](https://github.com/malleryjs/mallery/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-06-06)
+
+
+### Bug Fixes
+
+* reduce transparency of navigation item bottom border ([10b8e2c](https://github.com/malleryjs/mallery/commit/10b8e2cdc3a4a01b540dfaa2d2a089acf79fcc6f))
+
 ## v1.0.0-alpha.4
 - BUGFIX: Escape element ids with leading numbers when querying in the dom
 
