@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-alpha.7](https://github.com/malleryjs/mallery/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2020-06-06)
+
+
+### Bug Fixes
+
+* add hash bang to main entry ([2521697](https://github.com/malleryjs/mallery/commit/2521697b5705eb6f9bed386bea1724f3710ce86e))
+
 ## [1.0.0-alpha.6](https://github.com/malleryjs/mallery/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2020-06-06)
 
 ## [1.0.0-alpha.5](https://github.com/malleryjs/mallery/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-06-06)
